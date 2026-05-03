@@ -5,16 +5,16 @@ Give Claude cookies when it does good work, take them away when it screws up.
 Balance is persistent across sessions and auto-injected at session start.
 
 ```
-🍪 +3 받을게요? (이유: 브랜드 디자인 잘 잡음)
+🍪 Claim +3? (reason: shipped the brand redesign)
 ```
 
 ```
-🍪 -1 자진납부할게요 (이유: CSS overflow 미검증)
+🍪 Self-deduct -1? (reason: didn't verify CSS overflow)
 ```
 
 ## How it works
 
-- Claude detects praise/criticism tone (`잘했어`, `왜 이래`, `하루종일 했는데`...) and **proposes** a delta.
+- Claude detects praise/criticism tone (`nice`, `good job`, `why is this broken`, `worked all day`...) and **proposes** a delta.
 - You approve, adjust, or reject.
 - On approval, a flock-protected bash helper appends an entry to a JSONL ledger and regenerates a markdown summary.
 - A `SessionStart` hook injects the current balance + recent 10 changes into every new Claude Code session, so context is always available.

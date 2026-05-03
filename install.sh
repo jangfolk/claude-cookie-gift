@@ -93,7 +93,7 @@ fi
 
 # --- offer time-scaling rule for CLAUDE.md ---
 CLAUDE_MD="$CLAUDE_DIR/CLAUDE.md"
-RULE='- **시간 환산**: 시간 추정·응답 시 AI 기준으로 환산. **1 working day (human) = 1 hour (AI)**. 인간 시간 단위 그대로 쓰지 말 것 (예: 인간 1주 → AI 5시간, 인간 1개월 → AI 20시간 — 영업일 기준)'
+RULE='- **Time scaling**: when estimating or reporting durations, convert to AI scale. **1 working day (human) = 1 hour (AI)**. Do not parrot human timelines unchanged (e.g. 1 human week → 5 AI hours, 1 human month → 20 AI hours — working days only).'
 
 if [[ -f "$CLAUDE_MD" ]] && grep -qF "1 working day (human) = 1 hour (AI)" "$CLAUDE_MD"; then
     echo "ℹ️  time-scaling rule already present in CLAUDE.md — skipping"
@@ -108,7 +108,7 @@ else
             cat > "$CLAUDE_MD" <<EOF
 # Personal Claude Code preferences
 
-## 소통 방식
+## Communication
 $RULE
 EOF
         else
