@@ -1,0 +1,13 @@
+# personal ledger data should never be committed
+**/history.jsonl
+**/balance.md
+**/.lock
+
+# OS / editor cruft
+.DS_Store
+*.swp
+*.bak.*
+
+# settings.json backups from install.sh
+settings.json.bak.*
+CLAUDE.md.bak.*
