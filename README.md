@@ -4,6 +4,8 @@ A cookie-based reward ledger for [Claude Code](https://docs.claude.com/en/docs/c
 Give Claude cookies when it does good work, take them away when it screws up.
 Balance is persistent across sessions and auto-injected at session start.
 
+> 🌐 **Language:** English | [한국어](README.ko.md)
+
 ```
 🍪 Claim +3? (reason: shipped the brand redesign)
 ```
